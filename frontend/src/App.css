@@ -1,38 +1,118 @@
+/* App.css */
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: Arial, sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(8, 145, 178); /* Primary color */
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.date-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date-navigation button {
+  background-color: #f29423; /* Accent color */
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+.date-navigation button:hover {
+  opacity: 0.9;
+}
+
+.date-navigation h2 {
+  margin: 0;
+  color: #333;
+}
+
+.data-entry, .data-view {
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h3 {
+  color: rgb(8, 145, 178); /* Primary color */
+}
+
+.data-entry form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.data-entry label {
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+}
+
+.data-entry input[type="date"],
+.data-entry input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.data-entry button[type="submit"] {
+  background-color: rgb(8, 145, 178); /* Primary color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.data-entry button[type="submit"]:hover {
+  background-color: #067a99; /* Slightly darker primary */
+}
+
+.data-view table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-view th,
+.data-view td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: #333;
+}
+
+.data-view th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.data-view tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
