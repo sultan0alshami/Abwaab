@@ -229,6 +229,12 @@ button:active {
   font-size: 0.9em;
 }
 
+.data-view td button.icon-button {
+  padding: 8px 10px; /* Smaller padding for icon buttons */
+  font-size: 1.1em; /* Adjust font size for icons */
+  min-width: unset; /* Remove min-width constraint */
+}
+
 .data-view td button:first-child {
   margin-left: 0;
 }

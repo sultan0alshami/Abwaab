@@ -261,8 +261,8 @@ function App() {
                         <td>{metric.finished_operations}</td>
                         <td>{metric.liquidity}</td>
                         <td>
-                          <button onClick={() => handleEdit(metric)}>{t('edit')}</button>
-                          <button onClick={() => handleDelete(metric.id)}>{t('delete')}</button>
+                          <button onClick={() => handleEdit(metric)} className="icon-button edit-button" title={t('edit')}>✏️</button>
+                          <button onClick={() => handleDelete(metric.id)} className="icon-button delete-button" title={t('delete')}>🗑️</button>
                         </td>
                       </>
                     )}
