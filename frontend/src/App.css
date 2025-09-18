@@ -39,9 +39,10 @@ body {
   box-shadow: var(--shadow-medium);
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* Change to row for horizontal layout */
+  align-items: center; /* Vertically align items */
   justify-content: center;
+  gap: 20px; /* Space between title and logo */
 }
 
 .App-header h1 {
@@ -52,8 +53,8 @@ body {
 }
 
 .App-logo {
-  height: 75px; /* Slightly larger logo */
-  margin-bottom: 20px; /* More spacing */
+  height: 60px; /* Adjust size for inline display */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 main {

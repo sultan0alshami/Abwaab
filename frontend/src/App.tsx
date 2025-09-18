@@ -29,6 +29,7 @@ function App() {
   useEffect(() => {
     fetchDailyMetrics(currentDate);
     document.documentElement.dir = i18n.dir();
+    document.title = t('dashboard_title'); // Set the page title dynamically
   }, [currentDate, i18n]);
 
   const fetchDailyMetrics = async (date: string) => {
@@ -125,8 +126,8 @@ function App() {
   return (
     <div className="App" dir={i18n.dir()}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="Abwaab Logo" /> {/* Add the logo here */}
         <h1>{t('dashboard_title')}</h1>
+        <img src={logo} className="App-logo" alt="Abwaab Logo" />
       </header>
       <main>
         <section className="date-navigation">
