@@ -31,7 +31,13 @@ i18n
           "website_visits_header": "زيارات الموقع",
           "app_downloads_header": "تنزيلات التطبيق",
           "finished_operations_header": "العمليات المكتملة",
-          "liquidity_header": "السيولة"
+          "liquidity_header": "السيولة",
+          "actions": "الإجراءات",
+          "edit": "تعديل",
+          "delete": "حذف",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "confirm_delete": "هل أنت متأكد أنك تريد حذف هذا السجل؟"
         },
       },
     },

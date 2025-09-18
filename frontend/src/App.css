@@ -170,6 +170,69 @@ h2, h3 {
   background-color: #e8f5e9; /* Light green on hover */
 }
 
+.data-view td button {
+  margin-left: 8px; /* For RTL layout */
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.data-view td button:first-child {
+  margin-left: 0; /* No margin on the first button */
+}
+
+.data-view td button.edit-button {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  border: none;
+}
+
+.data-view td button.edit-button:hover {
+  background-color: #e0841f; /* Slightly darker accent */
+}
+
+.data-view td button.delete-button {
+  background-color: #dc3545; /* Red for delete */
+  color: var(--text-color-light);
+  border: none;
+}
+
+.data-view td button.delete-button:hover {
+  background-color: #c82333; /* Slightly darker red */
+}
+
+.data-view td button.save-button {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  border: none;
+}
+
+.data-view td button.save-button:hover {
+  background-color: #067a99; /* Slightly darker primary */
+}
+
+.data-view td button.cancel-button {
+  background-color: #6c757d; /* Grey for cancel */
+  color: var(--text-color-light);
+  border: none;
+}
+
+.data-view td button.cancel-button:hover {
+  background-color: #5a6268; /* Slightly darker grey */
+}
+
+.data-view td input[type="number"] {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  text-align: right; /* RTL adjustment */
+}
+
 .data-view p {
   padding: 20px;
   font-size: 1.1em;
