@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Abwaab/static/css/main.84493fca.css",
-    "main.js": "/Abwaab/static/js/main.1e63cfb0.js",
+    "main.css": "/Abwaab/static/css/main.093822d9.css",
+    "main.js": "/Abwaab/static/js/main.48880916.js",
     "static/js/453.670e15c7.chunk.js": "/Abwaab/static/js/453.670e15c7.chunk.js",
     "index.html": "/Abwaab/index.html",
-    "main.84493fca.css.map": "/Abwaab/static/css/main.84493fca.css.map",
-    "main.1e63cfb0.js.map": "/Abwaab/static/js/main.1e63cfb0.js.map",
+    "main.093822d9.css.map": "/Abwaab/static/css/main.093822d9.css.map",
+    "main.48880916.js.map": "/Abwaab/static/js/main.48880916.js.map",
     "453.670e15c7.chunk.js.map": "/Abwaab/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84493fca.css",
-    "static/js/main.1e63cfb0.js"
+    "static/css/main.093822d9.css",
+    "static/js/main.48880916.js"
   ]
 }
