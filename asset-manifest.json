@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Abwaab/static/css/main.07116242.css",
-    "main.js": "/Abwaab/static/js/main.a49c30d0.js",
+    "main.css": "/Abwaab/static/css/main.7a0253cd.css",
+    "main.js": "/Abwaab/static/js/main.1405bd9a.js",
     "static/js/453.670e15c7.chunk.js": "/Abwaab/static/js/453.670e15c7.chunk.js",
-    "static/media/logo.svg": "/Abwaab/static/media/logo.1b0d9918a23de5b2e090338945e81234.svg",
+    "static/media/logo.svg": "/Abwaab/static/media/logo.9808bef9a41a954bcb351f009235268e.svg",
     "index.html": "/Abwaab/index.html",
-    "main.07116242.css.map": "/Abwaab/static/css/main.07116242.css.map",
-    "main.a49c30d0.js.map": "/Abwaab/static/js/main.a49c30d0.js.map",
+    "main.7a0253cd.css.map": "/Abwaab/static/css/main.7a0253cd.css.map",
+    "main.1405bd9a.js.map": "/Abwaab/static/js/main.1405bd9a.js.map",
     "453.670e15c7.chunk.js.map": "/Abwaab/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07116242.css",
-    "static/js/main.a49c30d0.js"
+    "static/css/main.7a0253cd.css",
+    "static/js/main.1405bd9a.js"
   ]
 }
