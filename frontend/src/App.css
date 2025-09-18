@@ -3,18 +3,21 @@
 :root {
   --primary-color: rgb(8, 145, 178);
   --accent-color: #f29423;
-  --text-color-dark: #333;
-  --text-color-light: #fff;
-  --background-color-light: #f4f7f6;
-  --card-background: #fff;
-  --border-color: #e0e0e0;
+  --text-color-dark: #2c3e50;
+  --text-color-light: #ffffff;
+  --background-color-light: #ecf0f1;
+  --card-background: #ffffff;
+  --border-color: #dcdcdc;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --button-hover-darken: 8%;
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   background-color: var(--background-color-light);
   color: var(--text-color-dark);
+  line-height: 1.6;
 }
 
 .App {
@@ -22,69 +25,90 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
 .App-header {
   background-color: var(--primary-color);
-  padding: 20px;
+  padding: 20px 40px;
   color: var(--text-color-light);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .App-logo {
-  height: 60px; /* Adjust as needed */
-  margin-bottom: 10px;
+  height: 70px; /* Slightly larger */
+  margin-bottom: 15px; /* More spacing */
 }
 
 main {
   flex-grow: 1;
-  padding: 20px;
+  padding: 30px 20px;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 30px auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spacing between sections */
 }
 
 section {
   background-color: var(--card-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 25px;
-  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  padding: 30px;
+  border: 1px solid var(--border-color); /* Subtle border */
 }
 
 h2, h3 {
   color: var(--primary-color);
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* General Button Styles */
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: var(--text-color-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 .date-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: var(--card-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+  padding: 20px;
 }
 
 .date-navigation button {
   background-color: var(--accent-color);
-  border: none;
-  padding: 12px 20px;
-  margin: 0 15px;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1em;
-  color: var(--text-color-light);
-  transition: background-color 0.3s ease;
-  min-width: 120px;
+  min-width: 130px;
 }
 
 .date-navigation button:hover {
@@ -93,15 +117,15 @@ h2, h3 {
 
 .date-navigation h2 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2em;
   color: var(--text-color-dark);
 }
 
 .data-entry form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -109,32 +133,37 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   text-align: right; /* RTL adjustment */
-  font-weight: bold;
+  font-weight: 500;
   color: var(--text-color-dark);
+  font-size: 0.95em;
 }
 
 .data-entry input[type="date"],
 .data-entry input[type="number"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 8px;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 1em;
+  background-color: var(--background-color-light);
+  color: var(--text-color-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-entry input[type="date"]:focus,
+.data-entry input[type="number"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+  outline: none;
 }
 
 .data-entry button[type="submit"] {
   background-color: var(--primary-color);
-  color: var(--text-color-light);
-  border: none;
-  padding: 12px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1.1em;
-  grid-column: 1 / -1; /* Span across both columns */
-  transition: background-color 0.3s ease;
+  font-size: 1.2em;
+  grid-column: 1 / -1;
+  padding: 15px 25px;
 }
 
 .data-entry button[type="submit"]:hover {
@@ -145,16 +174,17 @@ h2, h3 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin-top: 20px;
+  margin-top: 25px;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: var(--shadow-light);
 }
 
 .data-view th,
 .data-view td {
   border: none;
-  padding: 12px 15px;
+  padding: 15px 18px;
   text-align: right; /* RTL adjustment */
   color: var(--text-color-dark);
 }
@@ -162,9 +192,10 @@ h2, h3 {
 .data-view th {
   background-color: var(--primary-color);
   color: var(--text-color-light);
-  font-weight: bold;
+  font-weight: 700;
   position: sticky;
   top: 0;
+  white-space: nowrap;
 }
 
 .data-view tr:nth-child(even) {
@@ -172,16 +203,14 @@ h2, h3 {
 }
 
 .data-view tr:hover {
-  background-color: #e8f5e9; /* Light green on hover */
+  background-color: #e3f2fd; /* Light blue on hover */
 }
 
 .data-view td button {
-  margin-left: 8px; /* For RTL layout */
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease;
+  margin-left: 10px; /* For RTL layout */
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.85em;
 }
 
 .data-view td button:first-child {
@@ -190,47 +219,39 @@ h2, h3 {
 
 .data-view td button.edit-button {
   background-color: var(--accent-color);
-  color: var(--text-color-light);
-  border: none;
 }
 
 .data-view td button.edit-button:hover {
-  background-color: #e0841f; /* Slightly darker accent */
+  background-color: #e0841f;
 }
 
 .data-view td button.delete-button {
   background-color: #dc3545; /* Red for delete */
-  color: var(--text-color-light);
-  border: none;
 }
 
 .data-view td button.delete-button:hover {
-  background-color: #c82333; /* Slightly darker red */
+  background-color: #c82333;
 }
 
 .data-view td button.save-button {
   background-color: var(--primary-color);
-  color: var(--text-color-light);
-  border: none;
 }
 
 .data-view td button.save-button:hover {
-  background-color: #067a99; /* Slightly darker primary */
+  background-color: #067a99;
 }
 
 .data-view td button.cancel-button {
   background-color: #6c757d; /* Grey for cancel */
-  color: var(--text-color-light);
-  border: none;
 }
 
 .data-view td button.cancel-button:hover {
-  background-color: #5a6268; /* Slightly darker grey */
+  background-color: #5a6268;
 }
 
 .data-view td input[type="number"] {
-  width: 90%;
-  padding: 5px;
+  width: 80px; /* Adjust width for better fit */
+  padding: 8px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
@@ -242,4 +263,33 @@ h2, h3 {
   padding: 20px;
   font-size: 1.1em;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .date-navigation {
+    flex-direction: column;
+  }
+
+  .date-navigation button {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .data-entry form {
+    grid-template-columns: 1fr;
+  }
+
+  .data-view th,
+  .data-view td {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .App-header h1 {
+    font-size: 2em;
+  }
+
+  .App-logo {
+    height: 50px;
+  }
 }
