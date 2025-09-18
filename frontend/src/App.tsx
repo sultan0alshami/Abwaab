@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { supabase } from './supabaseClient';
 import { useTranslation } from 'react-i18next';
+import logo from './logo.svg'; // Import the logo
 
 interface DailyMetric {
   id: string;
@@ -124,6 +125,7 @@ function App() {
   return (
     <div className="App" dir={i18n.dir()}>
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="Abwaab Logo" /> {/* Add the logo here */}
         <h1>{t('dashboard_title')}</h1>
       </header>
       <main>
