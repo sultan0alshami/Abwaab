@@ -9,7 +9,6 @@
   --card-background: #ffffff;
   --border-color: #dcdcdc;
   --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --button-hover-darken: 8%;
 }
 
 body {
@@ -86,7 +85,7 @@ button {
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   color: var(--text-color-light);
   display: inline-flex;
   align-items: center;
@@ -96,6 +95,7 @@ button {
 
 button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .date-navigation {
@@ -112,7 +112,7 @@ button:hover {
 }
 
 .date-navigation button:hover {
-  background-color: #e0841f; /* Slightly darker accent */
+  background-color: #e68a1a; /* Slightly darker accent for better contrast */
 }
 
 .date-navigation h2 {
@@ -155,7 +155,7 @@ button:hover {
 .data-entry input[type="date"]:focus,
 .data-entry input[type="number"]:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2); /* Using RGB directly */
   outline: none;
 }
 
@@ -222,7 +222,7 @@ button:hover {
 }
 
 .data-view td button.edit-button:hover {
-  background-color: #e0841f;
+  background-color: #e68a1a; /* Adjusted for better contrast */
 }
 
 .data-view td button.delete-button {
@@ -230,7 +230,7 @@ button:hover {
 }
 
 .data-view td button.delete-button:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Slightly darker red */
 }
 
 .data-view td button.save-button {
