@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { supabase } from './supabaseClient';
+import { useTranslation } from 'react-i18next';
 
 interface DailyMetric {
   id: string;
@@ -13,6 +14,7 @@ interface DailyMetric {
 }
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [metricDate, setMetricDate] = useState<string>('');
   const [websiteVisits, setWebsiteVisits] = useState<number>(0);
   const [appDownloads, setAppDownloads] = useState<number>(0);
@@ -23,7 +25,9 @@ function App() {
 
   useEffect(() => {
     fetchDailyMetrics(currentDate);
-  }, [currentDate]);
+    // Set document direction for RTL
+    document.documentElement.dir = i18n.dir();
+  }, [currentDate, i18n]);
 
   const fetchDailyMetrics = async (date: string) => {
     const { data, error } = await supabase
@@ -74,22 +78,22 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" dir={i18n.dir()}>
       <header className="App-header">
-        <h1>Abwaab Dashboard</h1>
+        <h1>{t('dashboard_title')}</h1>
       </header>
       <main>
         <section className="date-navigation">
-          <button onClick={() => handleDateChange(-1)}>Previous Day</button>
-          <h2>Date: {currentDate}</h2>
-          <button onClick={() => handleDateChange(1)}>Next Day</button>
+          <button onClick={() => handleDateChange(-1)}>{t('previous_day')}</button>
+          <h2>{t('date')}: {currentDate}</h2>
+          <button onClick={() => handleDateChange(1)}>{t('next_day')}</button>
         </section>
 
         <section className="data-entry">
-          <h3>Enter Daily Metrics</h3>
+          <h3>{t('enter_daily_metrics')}</h3>
           <form onSubmit={handleSubmit}>
             <label>
-              Date:
+              {t('date')}:
               <input
                 type="date"
                 value={metricDate}
@@ -98,7 +102,7 @@ function App() {
               />
             </label>
             <label>
-              Website Visits:
+              {t('website_visits')}:
               <input
                 type="number"
                 value={websiteVisits}
@@ -107,7 +111,7 @@ function App() {
               />
             </label>
             <label>
-              App Downloads:
+              {t('app_downloads')}:
               <input
                 type="number"
                 value={appDownloads}
@@ -116,7 +120,7 @@ function App() {
               />
             </label>
             <label>
-              Finished Operations:
+              {t('finished_operations')}:
               <input
                 type="number"
                 value={finishedOperations}
@@ -125,7 +129,7 @@ function App() {
               />
             </label>
             <label>
-              Liquidity:
+              {t('liquidity')}:
               <input
                 type="number"
                 step="0.01"
@@ -134,23 +138,23 @@ function App() {
                 required
               />
             </label>
-            <button type="submit">Add Metric</button>
+            <button type="submit">{t('add_metric')}</button>
           </form>
         </section>
 
         <section className="data-view">
-          <h3>Metrics for {currentDate}</h3>
+          <h3>{t('metrics_for')} {currentDate}</h3>
           {dailyMetrics.length === 0 ? (
-            <p>No data for this date.</p>
+            <p>{t('no_data_for_this_date')}</p>
           ) : (
             <table>
               <thead>
                 <tr>
-                  <th>Created At</th>
-                  <th>Website Visits</th>
-                  <th>App Downloads</th>
-                  <th>Finished Operations</th>
-                  <th>Liquidity</th>
+                  <th>{t('created_at')}</th>
+                  <th>{t('website_visits_header')}</th>
+                  <th>{t('app_downloads_header')}</th>
+                  <th>{t('finished_operations_header')}</th>
+                  <th>{t('liquidity_header')}</th>
                 </tr>
               </thead>
               <tbody>
