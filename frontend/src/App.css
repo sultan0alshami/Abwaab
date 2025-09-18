@@ -2,13 +2,17 @@
 
 :root {
   --primary-color: rgb(8, 145, 178);
+  --primary-color-dark: rgb(6, 122, 150); /* Slightly darker primary for hover */
   --accent-color: #f29423;
+  --accent-color-dark: #e0841f; /* Slightly darker accent for hover */
   --text-color-dark: #2c3e50;
+  --text-color-medium: #555555;
   --text-color-light: #ffffff;
   --background-color-light: #ecf0f1;
   --card-background: #ffffff;
   --border-color: #dcdcdc;
-  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -17,6 +21,7 @@ body {
   background-color: var(--background-color-light);
   color: var(--text-color-dark);
   line-height: 1.6;
+  font-size: 16px;
 }
 
 .App {
@@ -29,9 +34,9 @@ body {
 
 .App-header {
   background-color: var(--primary-color);
-  padding: 20px 40px;
+  padding: 25px 40px; /* Increased padding */
   color: var(--text-color-light);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -41,91 +46,98 @@ body {
 
 .App-header h1 {
   margin: 0;
-  font-size: 2.8em;
+  font-size: 3em; /* Slightly larger heading */
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 .App-logo {
-  height: 70px; /* Slightly larger */
-  margin-bottom: 15px; /* More spacing */
+  height: 75px; /* Slightly larger logo */
+  margin-bottom: 20px; /* More spacing */
 }
 
 main {
   flex-grow: 1;
-  padding: 30px 20px;
+  padding: 40px 20px; /* Increased padding */
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 40px auto; /* Increased margin */
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Spacing between sections */
+  gap: 35px; /* Increased spacing between sections */
 }
 
 section {
   background-color: var(--card-background);
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  padding: 30px;
-  border: 1px solid var(--border-color); /* Subtle border */
+  border-radius: 15px; /* Softer corners */
+  box-shadow: var(--shadow-medium);
+  padding: 35px; /* Increased padding */
+  border: 1px solid var(--border-color);
 }
 
 h2, h3 {
   color: var(--primary-color);
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 30px; /* More spacing */
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* General Button Styles */
 button {
   border: none;
-  padding: 10px 20px;
+  padding: 12px 22px; /* Adjusted padding */
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.05em; /* Slightly larger font */
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   color: var(--text-color-light);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 8px; /* More gap for icons if added later */
+  box-shadow: var(--shadow-subtle); /* Subtle shadow for all buttons */
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Stronger shadow on hover */
+}
+
+button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .date-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 25px; /* Increased gap */
+  padding: 25px; /* Increased padding */
 }
 
 .date-navigation button {
   background-color: var(--accent-color);
-  min-width: 130px;
+  min-width: 140px; /* Slightly wider */
 }
 
 .date-navigation button:hover {
-  background-color: #e68a1a; /* Slightly darker accent for better contrast */
+  background-color: var(--accent-color-dark); /* Using darker accent variable */
 }
 
 .date-navigation h2 {
   margin: 0;
-  font-size: 2em;
+  font-size: 2.2em; /* Slightly larger */
   color: var(--text-color-dark);
 }
 
 .data-entry form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 900px;
+  gap: 30px; /* Increased gap */
+  max-width: 950px; /* Wider form */
   margin: 0 auto;
 }
 
@@ -134,57 +146,57 @@ button:hover {
   flex-direction: column;
   text-align: right; /* RTL adjustment */
   font-weight: 500;
-  color: var(--text-color-dark);
-  font-size: 0.95em;
+  color: var(--text-color-medium); /* Slightly softer text color */
+  font-size: 1em; /* Adjusted font size */
 }
 
 .data-entry input[type="date"],
 .data-entry input[type="number"] {
   width: 100%;
-  padding: 12px;
-  margin-top: 8px;
+  padding: 14px; /* Increased padding */
+  margin-top: 10px; /* More spacing */
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: 8px; /* Softer corners */
   box-sizing: border-box;
-  font-size: 1em;
-  background-color: var(--background-color-light);
+  font-size: 1.05em; /* Slightly larger font */
+  background-color: var(--card-background);
   color: var(--text-color-dark);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .data-entry input[type="date"]:focus,
 .data-entry input[type="number"]:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2); /* Using RGB directly */
+  border-color: var(--primary-color-dark); /* Darker primary on focus */
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.3); /* Slightly stronger shadow */
   outline: none;
 }
 
 .data-entry button[type="submit"] {
   background-color: var(--primary-color);
-  font-size: 1.2em;
+  font-size: 1.3em; /* Larger font for submit */
   grid-column: 1 / -1;
-  padding: 15px 25px;
+  padding: 18px 30px; /* Increased padding */
 }
 
 .data-entry button[type="submit"]:hover {
-  background-color: #067a99; /* Slightly darker primary */
+  background-color: var(--primary-color-dark); /* Using darker primary variable */
 }
 
 .data-view table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin-top: 25px;
+  margin-top: 30px; /* More spacing */
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 12px; /* Softer corners */
   overflow: hidden;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
 }
 
 .data-view th,
 .data-view td {
   border: none;
-  padding: 15px 18px;
+  padding: 18px 20px; /* Increased padding */
   text-align: right; /* RTL adjustment */
   color: var(--text-color-dark);
 }
@@ -196,25 +208,28 @@ button:hover {
   position: sticky;
   top: 0;
   white-space: nowrap;
+  font-size: 1.05em;
 }
 
 .data-view tr:nth-child(even) {
-  background-color: var(--background-color-light);
+  background-color: var(--background-color-light); /* Subtle background for even rows */
 }
 
 .data-view tr:hover {
-  background-color: #e3f2fd; /* Light blue on hover */
+  background-color: #e3f2fd; /* Light blue on hover for better visual feedback */
+  transform: translateY(-1px); /* Subtle lift on hover */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .data-view td button {
-  margin-left: 10px; /* For RTL layout */
-  padding: 8px 15px;
-  border-radius: 6px;
-  font-size: 0.85em;
+  margin-left: 12px; /* More spacing for RTL */
+  padding: 10px 18px; /* Adjusted padding */
+  border-radius: 7px;
+  font-size: 0.9em;
 }
 
 .data-view td button:first-child {
-  margin-left: 0; /* No margin on the first button */
+  margin-left: 0;
 }
 
 .data-view td button.edit-button {
@@ -222,15 +237,15 @@ button:hover {
 }
 
 .data-view td button.edit-button:hover {
-  background-color: #e68a1a; /* Adjusted for better contrast */
+  background-color: var(--accent-color-dark);
 }
 
 .data-view td button.delete-button {
-  background-color: #dc3545; /* Red for delete */
+  background-color: #dc3545;
 }
 
 .data-view td button.delete-button:hover {
-  background-color: #c82333; /* Slightly darker red */
+  background-color: #c82333;
 }
 
 .data-view td button.save-button {
@@ -238,11 +253,11 @@ button:hover {
 }
 
 .data-view td button.save-button:hover {
-  background-color: #067a99;
+  background-color: var(--primary-color-dark);
 }
 
 .data-view td button.cancel-button {
-  background-color: #6c757d; /* Grey for cancel */
+  background-color: #6c757d;
 }
 
 .data-view td button.cancel-button:hover {
@@ -250,46 +265,96 @@ button:hover {
 }
 
 .data-view td input[type="number"] {
-  width: 80px; /* Adjust width for better fit */
-  padding: 8px;
+  width: 90px; /* Slightly wider for better usability */
+  padding: 10px; /* Increased padding */
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 6px;
   box-sizing: border-box;
-  font-size: 0.9em;
+  font-size: 0.95em;
   text-align: right; /* RTL adjustment */
 }
 
 .data-view p {
-  padding: 20px;
-  font-size: 1.1em;
-  color: #666;
+  padding: 25px;
+  font-size: 1.2em;
+  color: var(--text-color-medium);
 }
 
 @media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.2em;
+  }
+
+  .App-logo {
+    height: 60px;
+  }
+
+  main {
+    padding: 20px 10px;
+    margin: 20px auto;
+    gap: 25px;
+  }
+
+  section {
+    padding: 25px;
+  }
+
+  h2, h3 {
+    margin-bottom: 20px;
+  }
+
   .date-navigation {
     flex-direction: column;
+    gap: 15px;
+    padding: 15px;
   }
 
   .date-navigation button {
-    width: 80%;
-    margin-bottom: 10px;
+    width: 90%;
+    min-width: unset;
+    margin-bottom: 5px;
   }
 
   .data-entry form {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .data-view th,
-  .data-view td {
+  .data-entry label {
+    font-size: 0.9em;
+  }
+
+  .data-entry input[type="date"],
+  .data-entry input[type="number"] {
     padding: 10px;
     font-size: 0.9em;
   }
 
-  .App-header h1 {
-    font-size: 2em;
+  .data-entry button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1em;
   }
 
-  .App-logo {
-    height: 50px;
+  .data-view th,
+  .data-view td {
+    padding: 12px 10px;
+    font-size: 0.8em;
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  .data-view td button {
+    margin-left: 5px;
+    padding: 6px 10px;
+    font-size: 0.75em;
+  }
+
+  .data-view td input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    font-size: 0.8em;
+  }
+
+  .data-view p {
+    font-size: 1em;
   }
 }
